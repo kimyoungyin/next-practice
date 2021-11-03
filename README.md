@@ -12,3 +12,7 @@
 -   설치 : npx create-next-app (폴더명)
 -   public : index.html 파일 없다. request가 server에 도달하기 전에 pre-render되므로
 -   개발 서버 열기 : npm run dev <-index.js 파일이 pre-rendered 된 상태로 열림
+
+## next.js 초기화하기
+
+-   index.js의 wrapper만 남기고 모든 태그 제거
