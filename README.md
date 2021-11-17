@@ -20,7 +20,7 @@ npx create-next-app (폴더명) --typescript
 
 <br />
 
-# Pages & File-based Routing
+# 2. Pages & File-based Routing
 
 ## File-based Routing instead of Code-based Routing
 
@@ -34,7 +34,7 @@ next.js에서는 react-router가 필요 없다.
 4.  /pages/products/list.tsx: `/product/list`
 5.  /pages/products/[id].tsx: detail 페이지. `/product/:id`
 
-### 동적 라우팅(Dynamic Routing)
+### 1) 동적 라우팅(Dynamic Routing)
 
 -   동적 라우팅 파일을 찾는 원리: 어떤 id로 접근 시 next 자체에서 같은 폴더 내의 id 이름과 동일한 파일을 찾고, 없으면 [id].tsx 파일을 보여준다.
 -   물론 [] 안에 들어가는 변수명은 아무거나 상관없다.
@@ -94,3 +94,38 @@ const DetailPage = () => {
         //...
     };
     ```
+
+    <br/>
+
+### 2) 해당 url로 이동하기: Navigating with the "Link" component
+
+**주의: 이 Link("next/link")는 기존 react에서 사용하던 것(react-router-dom)과 다릅니다.**
+
+-   `react-router-dom` Link와 다른 점: to가 아니라 href
+
+-   사용 방법
+
+```tsx
+import Link from "next/link";
+import router from "next/router"
+
+// 첫 번째 방법: 직접 경로 입력
+<Link href={`/video/${videoId}`} >Video 1</Link>
+
+// 두 번째 방법: 객체 입력
+<Link href={{
+    pathname: "/video/[id]",
+    query: {id: videoId},
+}} >Video 1</Link>
+
+// 세번째 방법: router.push(href)
+const router = useRouter()
+const someFunc = () => {
+    router.push("위와 같은 것")
+}
+```
+
+### 3) 404 페이지
+
+-   파일명: 404
+-   경로: /pages/404.tsx
