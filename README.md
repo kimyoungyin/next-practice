@@ -26,7 +26,7 @@ npx create-next-app (폴더명) --typescript
 
 next.js에서는 react-router가 필요 없다.
 
-경로별 예시는 다움과 같다.
+경로별 예시는 다음과 같다.
 
 1.  /pages/index.tsx: 시작 페이지. `/`
 2.  /pages/about.tsx: `/about`
@@ -54,7 +54,7 @@ const DetailPage = () => {
 
 -   중첩 동적 라우팅(Nested Dynamic Routing) -> **n개의 id**를 모두 얻을 수 있다.
 
-        예시 /pages/products/[productId]/[userId].tsx: `/products/:productId/:userId`
+    예시 /pages/products/[productId]/[userId].tsx: `/products/:productId/:userId`
 
         ```tsx
         import { useRouter } from "next/dist/client/router";
