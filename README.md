@@ -56,41 +56,41 @@ const DetailPage = () => {
 
     예시 /pages/products/[productId]/[userId].tsx: `/products/:productId/:userId`
 
-        ```tsx
-        import { useRouter } from "next/dist/client/router";
+    ```tsx
+    import { useRouter } from "next/dist/client/router";
 
-        const DetailPage = () => {
-            const router = useRouter();
+    const DetailPage = () => {
+        const router = useRouter();
 
-            console.log(router.query); // { productId: value1, userId: value2 }
-            console.log(router.query.productId); // value1
-            console.log(router.query.userId); // value2
-            //...
-        };
-        ```
+        console.log(router.query); // { productId: value1, userId: value2 }
+        console.log(router.query.productId); // value1
+        console.log(router.query.userId); // value2
+        //...
+    };
+    ```
 
     <br />
 
 -   Catch-All Routing: `/some/thing`와 같이 "/"로 나뉜 url 값들을 모두 가져오고 싶을 때
 
-    1. 파일 혹은 폴더명: **spread 연산자**로 작성
+    파일 혹은 폴더명: **spread 연산자**로 작성
 
-        ```
-        [...datas].tsx
-        [...datas]/index.tsx
-        ```
+    ```
+    [...datas].tsx
+    [...datas]/index.tsx
+    ```
 
-        예시
+    예시
 
-        ```tsx
-        import { useRouter } from "next/dist/client/router";
+    ```tsx
+    import { useRouter } from "next/dist/client/router";
 
-        const DetailPage = () => {
-            const router = useRouter();
+    const DetailPage = () => {
+        const router = useRouter();
 
-            console.log(router.query); // { datas: [some, thing] }
-            console.log(router.query.datas[0]); // some
-            console.log(router.query.datas[1]); // thing
-            //...
-        };
-        ```
+        console.log(router.query); // { datas: [some, thing] }
+        console.log(router.query.datas[0]); // some
+        console.log(router.query.datas[1]); // thing
+        //...
+    };
+    ```
